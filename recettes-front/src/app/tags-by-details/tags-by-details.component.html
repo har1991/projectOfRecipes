@@ -1,0 +1,16 @@
+
+<div class="container">
+    <div class="row" *ngIf="clicked_tag">
+        <div class="col-12 col-sm-6 col-md-3" class="card" *ngFor="let recipe of clicked_tag.recipe ">
+            <div *ngFor="let image of recipe.images  ">
+                <img *ngIf="recipe.images.length &&recipe.primary_photo_id === image.id"
+                    src="http://localhost:9999/image/{{image.name}}" alt="">
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Name : {{recipe.name}}</h5>
+                <p class="difficulty">Difficulty : {{recipe.difficulty}}</p>
+                <button class="btn btn-info" [routerLink]="['/', 'recipedetails', recipe.id]">view</button>
+            </div>
+        </div>
+    </div>
+</div>

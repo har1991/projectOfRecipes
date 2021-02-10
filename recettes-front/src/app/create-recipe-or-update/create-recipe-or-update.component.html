@@ -1,0 +1,89 @@
+<body>
+
+    <div class="container">
+        
+        <form class="form-signin" [formGroup]="recipe_form">
+            
+                <div formArrayName="tags" *ngFor="let tag of tags_to_get">
+                    <button [class.active]="tag.selected" class="tag tag5" (click)="add_tag(tag)"> {{tag.tag.name}}</button>
+                </div>
+            
+            <label for="name"> name of recipe :</label>
+            <input formControlName="name" type="text" class="form-control" placeholder="recipe name" lowercase required autofocus>
+
+
+
+            <label for="description">description</label>
+            <textarea class="form-control" name="w3review" formControlName="description" rows="4" cols="50"
+                required></textarea>
+
+
+
+            <label for="time_preparation">preparation time</label>
+            <input type="number" min="1" formControlName="time_preparation" class="form-control"  required>
+
+            <label for="time_cocking">cooking time </label>
+            <input type="number" min="1" formControlName="time_cocking" class="form-control" required>
+            <br>
+            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                <option selected>Choose...</option>
+                <option value="VERY EASY">very easy</option>
+                <option value="EASY">easy</option>
+                <option value="AVERAGE">average</option>
+                <option value="DIFFICULT">difficult</option>
+                <option value="VERY DIFFICULT">very difficult </option>
+            </select>
+            <div class="form-group">
+                <label for="file">File</label>
+                <input formControlName="file" id="file" type="file" class="form-control" multiple
+                    (change)="onFileChange($event)" accept="image/x-png,image/jpeg">
+       
+            </div>
+            <div class="images-preview mt-2" *ngIf="photos.length">
+                <div class="row">
+                    <div class="col-md-6 col-lg-3	 col-xl-2" formArrayName="photos"
+                        *ngFor="let photo of photos.controls; let i = index;">
+                        <input [value]="i" type="radio" name="primary" [formControl]="recipe_form.controls.primary">
+                        <div class="card mb-3" [formGroupName]="i">
+                            <button type="button" (click)="removePhoto(i)" class="btn btn-danger remove-btn">x</button>
+                            <img [src]="photo['controls'].url.value" class="card-img-top" alt="Image Preview">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                <label class="form-check-label" for="defaultCheck1">
+                    Private ?
+                </label>
+            </div>
+
+
+            <br>
+            <button class="btn btn-lg btn-primary btn-block" (click)="add_recipe()">Create </button>
+
+        </form>
+    </div>
+
+    
+</body>
+
+
+<!--
+<label class="image-upload-container btn btn-bwm">
+    <span>Select Image</span>
+    <input #imageInput
+           type="file"
+           accept="image/*"
+           (change)="processFile(imageInput)">
+  </label>
+  
+ 
+  <label class="label-file" for="test">
+    <div class="dev-file">Click or drop something here</div>
+    <input type="file" id="test">
+  </label>
+  <p id="filename"></p>
+-->

@@ -1,0 +1,41 @@
+<body>
+  <div class="container" *ngIf="recipe">
+    <div class="row">
+      <div class="col-12 col-sm-6 col-md-6" class="details">
+        
+        <h5>Name:<p> {{recipe.name}}</p></h5><br>
+        <h5>Difficulty :<p> {{recipe.difficulty}}</p></h5><br>
+        <h5>Description :<p> {{recipe.description}}</p></h5>
+        <h5>tag :</h5>
+        <div *ngFor="let tag of recipe.tags">
+          <button  class="action-button shadow animate red" [routerLink]="['/','tagsByDetailsComponent',tag.id]"  (click)="show_tag_recipes(tag.id)"
+        > {{tag.name}}</button>
+        </div>
+        
+      </div>
+      <div  class="col-12 col-sm-6 col-md-6">
+        <div id="carouselExampleControls" class="carousel carousel-fade" data-ride="carousel" data-interval="2000">
+          <div class="carousel-inner">
+            <div [class.active]="i==active" class="carousel-item embed-responsive-item"
+              *ngFor="let image of recipe.images ; let i = index">
+              <img class="d-block w-100" src="http://localhost:9999/image/{{image.name}}" alt="First slide">
+            </div>
+          </div>
+          <a (click)="set_active('previous')" class="carousel-control-prev" role="button" data-slide="prev">
+            
+            <i class="fa fa-arrow-circle-left"></i>
+        <!-- <i class="fa fa-backward"></i><span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
+            
+          </a>
+          <a (click)="set_active('next')" class="carousel-control-next" role="button" data-slide="next">
+            <i class="fa fa-arrow-circle-right"></i>
+           <!--<span class="carousel-control-next-icon" aria-hidden="true"></span>-->
+            
+          </a>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+ 
+</body>

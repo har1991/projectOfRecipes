@@ -1,0 +1,54 @@
+
+<div class="image">
+    <div class="container">
+        <input  type="text"type="text"  [formControl]="search_input" >
+        <div class="row" *ngIf="recipes_by_name">
+            <div class="col-12 col-sm-6 col-md-3" class="card" *ngFor="let recipe of recipes_by_name ">
+                <div *ngFor="let image of recipe.images  ">
+                    <img *ngIf="recipe.images.length && recipe.primary_photo_id=== image.id"
+                        src="http://localhost:9999/image/{{image.name}}" alt="">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Name : {{recipe.name}}</h5>
+                    <p class="difficulty">Difficulty : {{recipe.difficulty}}</p>
+                    <button class="btn btn-info" [routerLink]="['/', 'recipedetails', recipe.id]">view</button>
+                    
+                </div>
+            </div>
+        </div>
+        <!--<button (click)="search(todo.value)">Search</button>-->
+        <div class="row" *ngIf="recipes && (!recipes_by_name || recipes_by_name.length==0)">
+            <div class="col-12 col-sm-6 col-md-3" class="card" *ngFor="let recipe of recipes ">
+                <div *ngFor="let image of recipe.images  ">
+                    <img *ngIf="recipe.images.length && recipe.primary_photo_id=== image.id"
+                        src="http://localhost:9999/image/{{image.name}}" alt="">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Name : {{recipe.name}}</h5>
+                    <p class="difficulty">Difficulty : {{recipe.difficulty}}</p>
+                    <button class="btn btn-info" [routerLink]="['/', 'recipedetails', recipe.id]">view</button>
+                    <i  [class.highlighted]="!!user_favorite(recipe.favorites)" (click)="like(recipe)"
+                        class="fa fa-heart">{{recipe.favorites.length ? recipe.favorites.length : "" }}</i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="number_of_pages" class="pagination">
+        <button ngfo>&laquo;</button>
+        <button *ngFor="let page of let item of [].constructor(number_of_pages),
+        let i = index" (click)="click_on_page(i+1)" [class.active]="current_page==i+1">{{i+1}}</button>
+        <button>&raquo;</button>
+    </div>
+</div>
+
+
+<!--
+<div *ngIf="favorites_recipes">
+    <div *ngFor="let favorite of favorites_recipes">
+        <div *ngFor="let item of favorite.recipes">
+            {{item.primary_photo_id}}
+
+        </div>
+    </div>
+</div>
+-->

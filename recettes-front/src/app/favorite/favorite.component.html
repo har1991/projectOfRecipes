@@ -1,0 +1,16 @@
+<div class="container">
+
+    <div class="row" *ngIf="favorites_recipes">
+        <div class="col-12 col-sm-6 col-md-3" class="card" *ngFor="let favorite of favorites_recipes ">
+            <div *ngFor="let image of favorite.recipes.images  ">
+                <img *ngIf="favorite.recipes.images.length &&favorite.recipes.primary_photo_id === image.id"
+                    src="http://localhost:9999/image/{{image.name}}" alt="">
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Name : {{favorite.recipes.name}}</h5>
+                <p class="difficulty">Difficulty : {{favorite.recipes.difficulty}}</p>
+                <button class="btn btn-info" [routerLink]="['/', 'recipedetails', favorite.recipes.id]">view</button>
+            </div>
+        </div>
+    </div>
+</div>

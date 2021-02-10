@@ -1,0 +1,74 @@
+
+   /* 
+    #bg{      
+        
+        height: 100%;
+        width: 100%;
+        background: url(../assets/Food_AdobeStock_189062803_1_Cropped_1_rm.jpg);
+        background-size: cover;
+      }
+      */
+      
+    .container{
+        width: 100%;
+        margin: 0 auto; /* Center the DIV horizontally */
+    }
+    .fixed-header {
+        width:100%;
+        position: relative;        
+        background: #001f3f;
+        padding: 10px 0;
+        color: #fff;
+    }
+    .fixed-footer {
+        width:100%;       
+        background: #001f3f;
+        padding: 10px 0;
+        color: #fff;
+        
+    }
+    /*
+    .header_footer{
+        right: 20rem;
+        position: relative;
+    }
+    */
+    .fixed-header{
+        top: 0;
+    }
+    .fixed-footer{
+        bottom: 0;
+    }    
+    /* Some more styles to beutify this example */
+    nav a{
+        color: #fff;
+        text-decoration: none;
+        padding: 7px 75px;
+        display: inline-block;
+    }
+    .container p{
+        line-height: 200px; /* Create scrollbar to test positioning */
+    }
+    button{
+      background: #001f3f;
+      border: transparent;
+        padding: 10px 0;
+        color: #fff;
+        padding: 7px 75px;
+    }
+    .fa{
+      
+      color: #fff;
+      font-size: 25px;
+      padding: 10px 0;
+    }
+    body{
+      background-image: url("/assets/salad-2756467.jpg");
+      background-position: center;
+      background-origin: content-box;
+      background-repeat: no-repeat;
+      background-size: cover;
+      min-height:123vh;
+    
+    
+  }

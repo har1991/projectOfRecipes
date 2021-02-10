@@ -1,0 +1,155 @@
+
+.tag {
+    
+    width: 100px;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 1px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    
+  }
+  .tag5 {
+      border-radius: 50%;
+    }
+    body { 
+        min-height:  500px;
+    }
+    /*img{
+        width: 250px;
+        border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 5px;
+    }
+    */
+    .container {
+      min-height:1100px ;
+    }
+    img {
+        margin: 1px;
+        width: 245px;
+        height:  200px;
+        border-radius: 4px;
+        padding: 5px;
+    }
+    
+    .card{
+        margin: 10px;
+        height: 350px;
+        width: 250px;
+        background:linear-gradient(to right, rgb(255, 238, 238), rgb(221, 239, 187));
+        
+        
+    }
+    /*.card:hover{
+      transform:   perspective(500px) translateZ(50px);
+      transition-delay:0.3s;
+    
+    }
+    */
+    img:hover {
+        box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+      }
+      ul {
+        list-style-type: none;
+        display:inline;
+      }
+      .fa-heart{
+        position: absolute;
+        left: 12rem;
+        color: grey;
+        font-size:30px
+    }
+      .highlighted {
+        color: red;
+    }
+    .pagination {
+      position: relative;
+      right: 35%;
+      left: 35%;
+      font-size: 14px;
+    }
+    .btn{
+      background: #001f3f;
+    }
+    body{
+      background-image: url("/assets/food-2569257.jpg");
+      background-position: center center;
+      background-origin: content-box;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+     
+    
+    }
+    .pagination {
+      display: inline-block;
+    }
+    
+    .pagination button {
+      color: black;
+      float: left;
+      padding: 8px 16px;
+      text-decoration: none;
+      border: 1px solid #ddd;
+    }
+    
+    .pagination button.active {
+      background-color: #4CAF50;
+      color: white;
+      border: 1px solid #4CAF50;
+    }
+    
+    .pagination button:hover:not(.active) {background-color: #ddd;}
+    
+    .pagination button:first-child {
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+    
+    .pagination button:last-child {
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+    .animate
+    {
+        transition: all 0.1s;
+        -webkit-transition: all 0.1s;
+    }
+    
+    .action-button
+    {
+      cursor: pointer ;
+        position: relative;
+        padding: 2px 8px;
+      margin: 0px 1px 1px 0px;
+      float: left;
+        border-radius: 10px;
+        font-family: 'Pacifico', cursive;
+        font-size: 25px;
+        color: #FFF;
+        text-decoration: none;	
+    }
+    
+    
+    .red
+    {
+        background-color: #E74C3C;
+        border-bottom: 5px solid #BD3E31;
+        text-shadow: 0px -2px #BD3E31;
+    }
+    
+   
+    
+    .action-button:active
+    {
+        transform: translate(0px,5px);
+      -webkit-transform: translate(0px,5px);
+        border-bottom: 1px solid;
+    }
+       

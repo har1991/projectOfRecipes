@@ -1,0 +1,39 @@
+<head>
+</head>
+
+<body>
+    <div *ngIf="login_service.isLogged()" class="fixed-header">
+        <div class="header">
+            <div class="container">
+                <nav>
+                    <a [routerLink]="['/', 'recipesList']">Home</a>
+                    <a [routerLink]="['/', 'createrecipeorupdate']">Create Recipe</a>
+                    <a class="fa fa-star" aria-hidden="true" [routerLink]="['/', 'favoritecomponent']">Favorites</a>
+                    <a [routerLink]="['/', 'tagscomponent']">Tags</a>
+                    
+                    <button (click)='logout()'>Logout</button>
+                </nav>
+            </div >
+        </div>
+    </div>
+
+
+
+     
+    <router-outlet></router-outlet>
+
+    <div *ngIf="login_service.isLogged()" class="fixed-footer " >
+        <div class="footer">
+            <div class="container">
+            <nav>
+                <a >Copyright &copy; 2020 Al-Obaidi Haroon</a>
+                <a href="https://www.facebook.com/harun.alobaidi/" class="fa fa-facebook-square"></a>
+                <a href="https://www.instagram.com/eng_harun/" class="fa fa-instagram"></a>
+                
+            </nav>
+
+        </div>
+        </div>
+    </div>
+
+</body>

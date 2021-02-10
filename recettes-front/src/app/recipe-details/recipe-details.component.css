@@ -1,0 +1,87 @@
+
+.container {
+    min-height:1100px ;
+    padding: 28px;
+  }
+
+.carousel.carousel-fade .carousel-item {
+    
+    width: 500px;
+    height: 350px;
+    display: block;
+    opacity: 0;
+    transition: opacity ease-out .7s;
+}
+
+.carousel.carousel-fade .carousel-item.active {
+    opacity: 1 !important;
+}
+body{
+    background-image: url("/assets/food-366875.jpg");
+    background-position: center center;
+    background-origin: content-box;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    
+   
+  
+  }
+  
+  .details{
+      padding: 10px;
+    opacity : 0.7 ;
+      width: 500px;
+      height: 350px;
+    background-color:white ;
+  }
+  h5{
+      font-family: URW Chancery L, cursive;
+  }
+  .animate
+  {
+      transition: all 0.1s;
+      -webkit-transition: all 0.1s;
+  }
+  
+  .action-button
+  {
+    cursor: pointer ;
+      position: relative;
+      padding: 2px 8px;
+    margin: 0px 1px 1px 0px;
+    float: left;
+      border-radius: 10px;
+      font-family: 'Pacifico', cursive;
+      font-size: 25px;
+      color: #FFF;
+      text-decoration: none;	
+  }
+  
+  
+  .red
+  {
+      background-color: #E74C3C;
+      border-bottom: 5px solid #BD3E31;
+      text-shadow: 0px -2px #BD3E31;
+  }
+  
+ 
+  
+  .action-button:active
+  {
+      transform: translate(0px,5px);
+    -webkit-transform: translate(0px,5px);
+      border-bottom: 1px solid;
+  }
+     .d-block {
+        height: 350px
+     }
+.fa{
+    background-color : white;
+    color: black;
+    position: relative;
+    right: 15px;
+    width: 20px;
+}
+   

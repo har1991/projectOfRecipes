@@ -1,0 +1,19 @@
+.container {
+    min-height:1100px ;
+  }
+  img {
+      margin: 1px;
+      width: 245px;
+      height:  200px;
+      border-radius: 4px;
+      padding: 5px;
+  }
+  
+  .card{
+      margin: 10px;
+      height: 350px;
+      width: 250px;
+      background:linear-gradient(to right, rgb(255, 238, 238), rgb(221, 239, 187));
+      
+      
+  }

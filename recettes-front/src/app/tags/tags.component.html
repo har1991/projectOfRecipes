@@ -1,0 +1,22 @@
+<ul *ngFor="let tag of tags">
+    <a class="action-button shadow animate red" (click)="show_tag_recipes(tag.id)">
+        {{tag.name}}
+    </a>
+</ul>
+<div class="container">
+    
+    
+    <div class="row" *ngIf="recipes_by_tag">
+        <div class="col-12 col-sm-6 col-md-3" class="card" *ngFor="let favorite of recipes_by_tag ">
+            <div *ngFor="let image of favorite.images  ">
+                <img *ngIf="favorite.images.length &&favorite.primary_photo_id === image.id"
+                    src="http://localhost:9999/image/{{image.name}}" alt="">
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Name : {{favorite.name}}</h5>
+                <p class="difficulty">Difficulty : {{favorite.difficulty}}</p>
+                <button class="btn btn-info" [routerLink]="['/', 'recipedetails', favorite.id]">view</button>
+            </div>
+        </div>
+    </div>
+</div>
